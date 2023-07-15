@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { getProviderById } from '@/utils/wallets';
 import { useWallet } from '@txnlab/use-wallet'
 
@@ -20,12 +21,6 @@ export default function ProviderIcon({ providerId, width, height }: ProviderIcon
   }
 
   return (
-    <img
-      className="rounded-full shadow-md"
-      width={width ?? 50}
-      height={height ?? 50}
-      alt={`${provider.metadata.name} icon`}
-      src={provider.metadata.icon}
-    />
+    <Image unoptimized src={provider.metadata.icon} width={width ?? 50} height={height ?? 50} alt={`${provider.metadata.name} icon`} className="rounded-full shadow-md" />
   )
 }
