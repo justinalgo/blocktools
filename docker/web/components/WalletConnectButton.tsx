@@ -30,7 +30,7 @@ export default function WalletConnectButtton() {
   }, [ activeAccount ])
 
   return (
-    <Menu as="div" className="relative p-1 flex">
+    <Menu as="div" className="p-1 flex w-full sm:w-max sm:relative">
         <Menu.Button>
           <WalletIcon className="h-6 w-6" aria-hidden="true" />
         </Menu.Button>
@@ -43,17 +43,17 @@ export default function WalletConnectButtton() {
         leaveFrom="transform opacity-100 scale-100"
         leaveTo="transform opacity-0 scale-95"
       >
-        <Menu.Items className="absolute right-0 z-10 mt-8 w-[32rem] origin-top-right rounded-md bg-white pb-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
+        <Menu.Items className="absolute h-full sm:h-auto top-0 sm:top-auto right-0 z-10 sm:mt-8 w-full sm:w-[32rem] origin-right rounded-md bg-white pb-1 shadow-lg ring-1 ring-black ring-opacity-5 focus:outline-none">
           {isReady && isActive && activeAccount && acctData &&
           <div className="bg-slate-100 text-slate-600 p-3 rounded-t-md flex w-full">
-            <div className="w-3/6">
+            <div className="w-full sm:w-3/6">
               <h2 className="flex space-x-2 items-center">
                 <ProviderIcon providerId={activeAccount.providerId} width={24} height={24} />
                 <span>{activeAccount.name}</span>
               </h2>
               <span className="text-slate-500 text-xs italic">{truncateAddress(activeAccount.address)}</span>
             </div>
-            <div className="self-end w-3/6">
+            <div className="self-end w-full sm:w-3/6">
               {acctData?.amount > 0 && acctData?.['min-balance'] && 
               <div className="text-xs">
                 Total: {algosdk.microalgosToAlgos(acctData?.amount)?.toPrecision(4)}A
@@ -88,6 +88,13 @@ export default function WalletConnectButtton() {
               </div>
             </Menu.Item>
           ))}
+          <Menu.Item as="div" className="sm:hidden flex items-center justify-center mt-4">
+            {({ close }) => (
+            <button type="button" onClick={close} className="border border-slate-400 px-8 py-1 rounded text-sm text-slate-700">
+              Close
+            </button>
+            )}
+          </Menu.Item>
         </Menu.Items>
       </Transition>
     </Menu>

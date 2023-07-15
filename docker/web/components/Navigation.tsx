@@ -20,11 +20,6 @@ const navigation = [
   { name: 'Projects', href: '#', current: false },
   { name: 'Calendar', href: '#', current: false },
 ]
-const userNavigation = [
-  { name: 'Your Profile', href: '#' },
-  { name: 'Settings', href: '#' },
-  { name: 'Sign out', href: '#' },
-]
 
 
 export default function Navigation() {
@@ -66,16 +61,7 @@ export default function Navigation() {
                 </div>
               </div>
               <div className="hidden sm:ml-6 sm:flex sm:items-center sm:space-x-3">
-                <button
-                  type="button"
-                  className="rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                >
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
-
-                {/* Profile dropdown */}
-                  <WalletConnectButton />
+                <WalletConnectButton />
               </div>
               <div className="-mr-2 flex items-center sm:hidden">
                 {/* Mobile menu button */}
@@ -111,33 +97,8 @@ export default function Navigation() {
               ))}
             </div>
             <div className="border-t border-gray-200 pb-3 pt-4">
-              <div className="flex items-center px-4">
-                <div className="flex-shrink-0">
-                  <img className="h-10 w-10 rounded-full" src={user.imageUrl} alt="" />
-                </div>
-                <div className="ml-3">
-                  <div className="text-base font-medium text-gray-800">{user.name}</div>
-                  <div className="text-sm font-medium text-gray-500">{user.email}</div>
-                </div>
-                <button
-                  type="button"
-                  className="ml-auto flex-shrink-0 rounded-full bg-white p-1 text-gray-400 hover:text-gray-500 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
-                >
-                  <span className="sr-only">View notifications</span>
-                  <BellIcon className="h-6 w-6" aria-hidden="true" />
-                </button>
-              </div>
-              <div className="mt-3 space-y-1">
-                {userNavigation.map((item) => (
-                  <Disclosure.Button
-                    key={item.name}
-                    as="a"
-                    href={item.href}
-                    className="block px-4 py-2 text-base font-medium text-gray-500 hover:bg-gray-100 hover:text-gray-800"
-                  >
-                    {item.name}
-                  </Disclosure.Button>
-                ))}
+              <div className="flex items-center px-4 justify-end space-x-4">
+                <WalletConnectButton />
               </div>
             </div>
           </Disclosure.Panel>
