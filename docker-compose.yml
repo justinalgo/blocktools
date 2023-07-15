@@ -1,0 +1,9 @@
+services:
+  web:
+    build:
+      context: ./docker/web
+    ports:
+      - "3000:3000"
+    volumes:
+       - ./docker/web:/home/node/app
+       - /home/node/app/node_modules
