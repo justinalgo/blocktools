@@ -21,9 +21,9 @@ const providerIconImages: ProviderIconImage = {
 
 
 export default function ProviderIcon({ providerId, width, height }: ProviderIconType) {
-  const { providers, isActive, isReady } = useWallet()
+  const { providers, isReady } = useWallet()
 
-  if (!isReady || !isActive) {
+  if (!isReady) {
     return null
   }
   
