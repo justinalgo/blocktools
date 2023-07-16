@@ -32,7 +32,7 @@ export default function WalletConnectButtton() {
   return (
     <Menu as="div" className="p-1 flex w-full sm:w-max sm:relative">
         <Menu.Button>
-          <WalletIcon className="h-6 w-6" aria-hidden="true" />
+          <WalletIcon className={classNames(isActive ? "text-slate-700" : "text-slate-400", "h-6 w-6")} aria-hidden="true" />
         </Menu.Button>
       <Transition
         as={Fragment}

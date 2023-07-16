@@ -1,5 +1,4 @@
 import { CircleStackIcon, WrenchIcon } from '@heroicons/react/24/outline'
-import Navigation from '@/components/Navigation'
 import Link from "next/link"
 
 
