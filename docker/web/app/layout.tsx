@@ -1,8 +1,8 @@
 import './globals.css'
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
-
 import WalletContextProvider from '@/context/WalletContext'
+import Navigation from '@/components/Navigation'
 
 const inter = Inter({ subsets: ['latin'] })
 
@@ -20,7 +20,14 @@ export default function RootLayout({
   return (
     <html lang="en" className="h-full">
       <body className={inter.className + ' h-full'}>
-        <WalletContextProvider>{ children }</WalletContextProvider>
+        <WalletContextProvider>
+          <div className="min-h-full">
+            <Navigation />
+            <div className="py-10">
+              { children }
+            </div>
+          </div>
+        </WalletContextProvider>
       </body>
     </html>
   )
