@@ -1,6 +1,5 @@
 import SelectField from '@/components/forms/SelectField'
 import TextField from '@/components/forms/TextField'
-import { PhotoIcon, UserCircleIcon } from '@heroicons/react/24/outline'
 
 
 export default function CreateAsset() {
