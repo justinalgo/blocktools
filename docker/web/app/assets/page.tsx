@@ -2,8 +2,7 @@ import { CircleStackIcon, WrenchIcon } from '@heroicons/react/24/outline'
 import Link from "next/link"
 
 
-export default function Home() {
-  
+export default function Assets() {
   return (
     <>
       <header>
@@ -27,7 +26,7 @@ export default function Home() {
               <div>
                 <div className="-mt-px flex divide-x divide-gray-200">
                   <div className="flex w-0 flex-1 justify-center space-x-4">
-                    <Link href="" className="relative -mr-px w-full flex items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-slate-700">
+                    <Link href="/assets/create" className="relative -mr-px w-full flex items-center justify-center gap-x-3 rounded-bl-lg border border-transparent py-4 text-sm font-semibold text-slate-700">
                       <WrenchIcon className="text-slate-700 w-5" />
                       Use it!
                     </Link>

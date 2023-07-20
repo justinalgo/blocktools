@@ -12,7 +12,7 @@ import algosdk from 'algosdk'
 
 export default function WalletConnectButtton() {
   const { clients, providers, isActive, isReady, activeAccount, getAccountInfo } = useWallet()
-  const [ acctData, setAcctData ] = useState<AccountInfo | null>(null)
+  const [ acctData, setAcctData ] = useState<AccountInfo>()
 
 
   useEffect(() => {
